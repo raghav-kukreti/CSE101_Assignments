@@ -1,0 +1,15 @@
+str="abcdefghij"
+arr=($(echo $str|sed  's/\(.\)/\1 /g'))
+echo -n "Enter an option (1 or 2): "
+read ch
+if [[ $ch == 1 ]]; then
+for (( i = 1; i <= 10; i++ )); do
+	mkdir dir-"$i"
+	# echo "$i"
+done
+else
+	for (( i = 0; i < 10; i++ )); do
+		# echo "${arr[$i]}"
+		mkdir dir-"${arr[$i]}"
+	done
+fi

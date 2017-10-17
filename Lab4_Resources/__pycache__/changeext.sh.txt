@@ -1,0 +1,4 @@
+echo -n "Enter directory:"
+read ch
+echo `cd "$ch"`
+for f in $(find . -type f); do mv $f ${f}.txt; done
