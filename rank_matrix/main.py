@@ -1,20 +1,10 @@
-# def create_matrix(n, m):
-# 	n = int(input('Enter rows: '))
-# 	m = int(input('Enter cols: ')) 
-# 	a = []
-# 	if(n>=m):
-# 		for i in range(n):
-# 			row = input().split() #created an array of row input - > ['1', '2', '3']
-# 			for i in range(m):
-# 				row[i] = int(row[i])
-# 			a.append(row)
-# 	else:
-# 		for i in range(m):
-# 			row = input().split() #created an array of row input - > ['1', '2', '3']
-# 		for i in range(n):
-# 			row[i] = int(row[i])
-# 		a.append(row)
-# 	return(a)
+def create_matrix(m, n):
+	matrix = []
+	for i in range(0,m):
+	    matrix.append([])
+	    for j in range(0,n):
+	        matrix[i].append(int(input('Enter element: ')))
+	return(matrix)
 
 def swap_rows(a, row1, row2):
 	# swap rows
@@ -75,11 +65,12 @@ def find_rank(a):
 
 if __name__ == '__main__':
 	# a = create_matrix(1, 3)
-	a=[[1,2],[3,4],[5,6]]
+	a=create_matrix(3,2)
 	# swap_rows(a, 0, 1)
 	# row_transform(a, 1, 0, 1)
 	print(a)
 	print(find_rank(a))
 	print(a)
+
 	# for i in range(len(a)):
 		# print(a[i][0])
