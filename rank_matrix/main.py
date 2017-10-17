@@ -1,3 +1,11 @@
+"""
+	Name    : Raghav Dev Kukreti
+	Group   : B1
+	Roll No :	2017082
+
+	Python code to calculate rank of a matrix.
+"""
+# Formulate the matrix of dimension MxN
 def create_matrix(m, n):
 	matrix = []
 	for i in range(0,m):
@@ -6,6 +14,7 @@ def create_matrix(m, n):
 	        matrix[i].append(int(input('Enter element at (' + str(i) + ', ' + str(j) + '): ')))
 	return matrix
 
+# Function to swap rows
 def swap_rows(a, row1, row2):
 	# swap rows
 	for i in range(len(a)):
@@ -14,11 +23,13 @@ def swap_rows(a, row1, row2):
 		a[row2][i]=temp
 	return(a)
 
+# Function to carry out row transformation
 def row_transform(a, x, row1, row2):
 	for i in range(len(a)):
 		a[row2][i] = a[row2][i] + x*a[row1][i]
 	return(a)
 
+# Finds rank through RR method
 def find_rank(a):
 	col=len(a[1])
 	row=len(a)
@@ -56,12 +67,12 @@ def find_rank(a):
 					a[m][i]=a[m][rank-1]
 					a[m][rank-1]=a[i][m]
 			row-=1
-		count2=0
+		ch=0
 		for i in a:
 			if i==[0]*col:
-				count2+=1
+				ch+=1
 
-	return (rank-count2)
+	return (rank-ch)
 
 if __name__ == '__main__':
 	# a = create_matrix(1, 3)
