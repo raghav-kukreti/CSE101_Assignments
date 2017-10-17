@@ -3,8 +3,8 @@ def create_matrix(m, n):
 	for i in range(0,m):
 	    matrix.append([])
 	    for j in range(0,n):
-	        matrix[i].append(int(input('Enter element: ')))
-	return(matrix)
+	        matrix[i].append(int(input('Enter element at (' + str(i) + ', ' + str(j) + '): ')))
+	return matrix
 
 def swap_rows(a, row1, row2):
 	# swap rows
@@ -65,7 +65,9 @@ def find_rank(a):
 
 if __name__ == '__main__':
 	# a = create_matrix(1, 3)
-	a=create_matrix(3,2)
+	m = int(input('Enter number of rows: '))
+	n = int(input('Enter number of cols: '))
+	a=create_matrix(m,n)
 	# swap_rows(a, 0, 1)
 	# row_transform(a, 1, 0, 1)
 	print(a)
