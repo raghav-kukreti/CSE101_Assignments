@@ -1,8 +1,9 @@
-
-
-def main():
+	def main():
 	# space separated input
-	array = list(map(int, input().split()))
+	num_vars = int(input('Enter number of variables: '))
+	minterms = list(map(int, input().split(', ')))
+	dont_cares = list(map(int, input().split()))
+	
 	print(array)
 
 
