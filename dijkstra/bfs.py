@@ -27,6 +27,7 @@ def find_all_distance(G, s_node):
     return distances_from_start
 
 no_vertices = int(input())
+
 for i in range(no_vertices):
     [no_nodes, no_edges] = input().split()
     nodes = create_nodes(int(no_nodes))
