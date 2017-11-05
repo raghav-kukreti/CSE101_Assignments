@@ -98,13 +98,8 @@ bool in_vector(vector<string> a,string b)
     return false;
 }
 
-//function to reduce minterms
 vector<string> reduce(vector<string> minterms)
 {
-/*for (int i=0; i<minterms.size(); i++)
-       cout << minterms[i]<<endl;
-       cout <<endl;*/
-
       vector<string> newminterms;
 
       int max=minterms.size();
