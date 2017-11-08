@@ -6,7 +6,7 @@ def readrecords():
 	student_arr = []
 	for i in file:
 	# 2013196 Catelyn Stark M.Tech-CSE 6.36
-		roll_no = int(i[0:7])
+		roll_no = i[0:7]
 		f_name = i[7: i.find(' ', 8)]
 		end_index = i.find(' ', 8)+1
 		l_name = i[end_index:i.find(' ', end_index)]
@@ -21,10 +21,18 @@ def readrecords():
 
 def orderrecords(array):
 	pass
+
 def main():
 	array = readrecords()
+	temp = student(None,None,None,None,None)
 	for i in range(len(array)):
-		if(array[i].comes_before(array[i+1])):
-			print(array[i].roll_no, array[i+1].roll_no)
+		for j in range(len(array)-i-1):
+			if(array[j+1].comes_before(array[j])):
+				temp = array[j]
+				array[j] = array[j+1]
+				array[j+1] = temp
+
+	for i in array:
+		print(i.roll_no, i.f_name, i.l_name, i.prog, i.gpa)
 if __name__ == '__main__':
 	main()

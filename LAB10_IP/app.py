@@ -10,21 +10,23 @@ class student:
 		print(self.roll_no, self.f_name, self.l_name, self.prog, self.gpa)
 		return ""
 
-		def comes_before(self, other):
+	def comes_before(self, other):
 		other_yr = int(other.roll_no[0:4])
 		other_prog = other.prog
 		other_gpa = other.gpa
 		self_yr = int(self.roll_no[0:4])
 		self_prog = self.prog
 		self_gpa = self.gpa
-		print(other_yr)
-		# return true if self comes before true
 
-def main():
-	file = open('studentdata.txt', 'r')
-	# for i in file:
-	# 	print(i)
-	pass
+		# Sort according to year
+		# Sort in year according to lexicographic
+		# sort in year, stream by GPA
 
-if __name__ == '__main__':
-	main()
+		if(self_yr < other_yr):
+			return True
+		elif(self_yr == other_yr):
+			if(self_prog < other_prog):
+				return True
+			elif(self_prog == other_prog):
+				if(self_gpa > other_gpa):
+					return True
