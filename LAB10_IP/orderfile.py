@@ -1,4 +1,5 @@
 from app import student
+# from app import comes_before
 
 def readrecords():
 	file = open('studentdata.txt', 'r')
@@ -16,10 +17,14 @@ def readrecords():
 		temp = student(roll_no, f_name, l_name, branch, gpa)
 		student_arr.append(temp)
 
-		return student_arr
-def main():
-	readrecords()
-	# print(gpa)
+	return student_arr
 
+def orderrecords(array):
+	pass
+def main():
+	array = readrecords()
+	for i in range(len(array)):
+		if(array[i].comes_before(array[i+1])):
+			print(array[i].roll_no, array[i+1].roll_no)
 if __name__ == '__main__':
 	main()
